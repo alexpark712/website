@@ -1,0 +1,29 @@
+---
+title: "The Lie Board"
+description: "Posted vs. actual transit arrival times, ranked by how much each line lies. MBTA first, then NYC and Chicago."
+tags: ["Data", "Urban"]
+---
+
+Transit agencies post arrival times. Trains arrive when they arrive. The gap between those two things is what I call the lie — and it turns out some lines lie much more than others.
+
+## The Idea
+
+I wanted to build a live leaderboard of transit system reliability that answered a simple question: if the board says the train arrives in 5 minutes, how often does it actually arrive within ±2 minutes of that?
+
+The answer varies wildly by line, time of day, and day of week. The MBTA Green Line is a particularly enthusiastic liar.
+
+## How It Works
+
+The project pulls real-time arrival data from transit agency APIs (MBTA, MTA, CTA) and compares predicted arrival times to actual arrival events. Discrepancies are bucketed, ranked, and visualized.
+
+The leaderboard updates every hour. Lines are scored 0-100, where 100 means every prediction was accurate within the margin, and 0 means the predictions were essentially random.
+
+## What I Found
+
+The Green Line's C branch has the worst accuracy during peak hours — predictions are off by more than 5 minutes roughly 40% of the time. The MBTA's heavy rail lines (Red, Orange, Blue) perform significantly better.
+
+The NYC Subway's worst performers are the above-ground sections, where weather and grade crossings introduce variance that the scheduling system doesn't adequately account for.
+
+## Stack
+
+Data pipeline in Python, APIs from MBTA V3, MTA GTFS-RT, and CTA. Frontend visualization in D3 and Next.js.

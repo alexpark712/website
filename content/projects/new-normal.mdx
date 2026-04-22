@@ -1,0 +1,31 @@
+---
+title: "The New Normal"
+description: "How often \"100-year\" weather events actually occur now, by US county. Flood insurance was priced on a lie."
+tags: ["Climate", "Maps"]
+---
+
+A "100-year flood" was defined as an event with a 1% annual probability. That definition was calibrated on historical data. The historical data no longer describes the current climate.
+
+The New Normal maps how often 100-year weather events actually occur now, by US county, and compares that frequency to what residents and insurers assume it to be.
+
+## The Problem
+
+Flood insurance pricing, zoning regulations, and infrastructure design are all based on return period analysis from historical data. When the climate shifts, those return periods compress — a 100-year flood might now be a 25-year flood in some regions.
+
+But the official classifications haven't caught up. FEMA flood maps are updated slowly, and the political process for updating them is contentious because the updates raise insurance costs in vulnerable areas.
+
+## What the Map Shows
+
+Using NOAA precipitation records and county-level extreme weather event data, the project calculates the actual observed frequency of events that were historically classified as 100-year events.
+
+In Harris County (Houston), what was historically a 100-year flood event is now occurring on roughly a 15-year return period. In parts of the Southeast, the compression is even more dramatic.
+
+## The Insurance Angle
+
+Flood insurance was priced on a lie — not a deliberate one, but a structural one. The pricing model assumed a stable climate. That assumption is now false.
+
+The consequence is predictable: private insurers are pulling out of high-risk markets, NFIP is chronically underfunded, and homeowners in vulnerable areas are either uninsured or insured at rates that don't reflect the actual risk.
+
+## Stack
+
+Data from NOAA Climate Data Online, county-level aggregation in Python (pandas, geopandas), visualization with Mapbox GL and D3.

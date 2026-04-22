@@ -1,0 +1,31 @@
+---
+title: "Credit Card Oracle"
+description: "Answer six questions, get the single card you should actually carry — no affiliate noise."
+tags: ["Finance", "Tool"]
+---
+
+The credit card industry is funded by affiliate marketing. Every "best credit cards" article you read is written to maximize clicks on affiliate links, not to recommend the best card for you.
+
+I wanted to build something different: a tool that takes your actual spending profile and recommends the single card that maximizes your net benefit, with no financial interest in the result.
+
+## The Six Questions
+
+The oracle asks: Do you travel internationally? What's your largest monthly spending category? Do you carry a balance? Do you value cash back or points? Do you have a specific airline or hotel program you use? Are you willing to pay an annual fee?
+
+Six questions covers roughly 85% of the decision surface. Most people don't need more nuance than that.
+
+## The Model
+
+Behind the tool is a scoring model that maps spending patterns to card reward rates and values points using a common denominator (cents per dollar effectively returned).
+
+Annual fees are amortized against the expected benefit. A card with a $550 annual fee that returns $900 in effective value has a net benefit of $350, which the tool compares against no-fee alternatives.
+
+## What's Excluded — Intentionally
+
+The oracle doesn't recommend cards with exotic acquisition requirements (limited invitation-only products), cards that require existing relationships (some premium products), or cards whose terms have changed recently enough that the data is stale.
+
+The philosophy is: the best card is the best card you can actually get and actually use.
+
+## Stack
+
+Logic in TypeScript, no database — all scoring done client-side so no spending data leaves the browser. Deployed as a Next.js static site.

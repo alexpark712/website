@@ -1,0 +1,33 @@
+---
+title: "Neighborhood Translator"
+description: "Interactive comparison of Boston and NYC neighborhoods by rent, crime, green space, waterfront access, and demographics."
+tags: ["Urban", "Maps"]
+---
+
+Moving between Boston and New York is a common trajectory. The cities are connected by Amtrak, overlapping job markets, and shared professional networks. But the neighborhood logic is entirely different, and most people make the translation poorly.
+
+Neighborhood Translator is an interactive map that lets you select a Boston neighborhood you know and shows you the NYC neighborhoods that are most similar across a set of weighted dimensions.
+
+## The Dimensions
+
+The comparison runs across: median rent per square foot, walk score and transit access, crime rate (normalized), park and green space per capita, waterfront access, and demographic composition.
+
+Users can adjust the weights — someone optimizing for affordability and transit gets a different match than someone optimizing for walkability and green space.
+
+## The Surprising Matches
+
+The matches that surprise people most:
+
+Somerville Magoun Square → Jackson Heights, Queens. Both are dense, transit-oriented, ethnically diverse neighborhoods undergoing gentrification pressure from adjacent more expensive neighborhoods.
+
+Brookline Village → Park Slope, Brooklyn. Similar rent profiles (expensive), similar demographics, similar neighborhood character — walkable, good restaurants, family-oriented.
+
+East Boston → Astoria, Queens. Waterfront access, working-class character, strong immigrant community, rapid real estate appreciation driven by proximity to downtown.
+
+## The Methodology
+
+Similarity scoring uses cosine similarity on the normalized feature vectors. Weights are linear. The data is sourced from Census ACS, FBI UCR, Trust for Public Land, and Walkscore API.
+
+## Stack
+
+Python data pipeline for feature engineering, Next.js + Mapbox GL for the interactive frontend, Vercel for deployment.

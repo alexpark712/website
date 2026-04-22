@@ -1,0 +1,31 @@
+---
+title: "Trace Your Tap"
+description: "Enter an address — trace drinking water from source watershed to treatment plant to tap, with EPA vs. EWG contaminant gap scoring."
+tags: ["Environment", "Tool"]
+---
+
+Most people don't know where their tap water comes from. Trace Your Tap lets you enter any US address and follow your drinking water from its source watershed through the treatment process to your faucet.
+
+## The Journey
+
+Water utility service areas are mapped against USGS watershed data. For a given address, the tool identifies the utility, the source water (surface water or groundwater), the watershed or aquifer it draws from, and the treatment plant.
+
+The journey is visualized as a linear flow: watershed → intake → treatment → distribution → tap.
+
+## The Contaminant Gap
+
+The core feature is the contaminant gap score: a comparison between the EPA's Maximum Contaminant Levels (MCLs) — the legal limits — and the Environmental Working Group's Health Guidelines, which are more conservative and based on current health research.
+
+The EPA's limits were set decades ago and haven't been updated to reflect newer evidence on many contaminants. For PFAS, for example, the EPA is still in the process of setting enforceable limits that health researchers have been recommending for years.
+
+The gap score shows: for your water utility, how many contaminants were detected above EWG guidelines but below EPA legal limits? Higher gap scores indicate utilities meeting their legal obligations but potentially serving water that health researchers consider suboptimal.
+
+## What I Found
+
+Utilities serving large cities generally have lower gap scores — more resources, more scrutiny, more investment in treatment. Smaller rural utilities serving older infrastructure often have higher scores.
+
+The geographic pattern isn't purely urban/rural. Legacy industrial areas near Midwestern manufacturing corridors show elevated PFAS and VOC readings that track the industrial history of the region.
+
+## Stack
+
+Address geocoding via US Census Geocoder. Water utility data from EPA SDWIS. Contaminant data from EWG's Tap Water Database. Frontend in Next.js with Mapbox for watershed visualization.
